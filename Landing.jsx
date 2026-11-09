@@ -1,0 +1,9 @@
+import {go} from '../lib/logic'
+const F=[['🏁','League','Round-robin tables, auto points and goal difference.'],['🏆','Cup','Knockout bracket where winners advance on their own.'],['🧩','Groups + Cup','Group tables feed a seeded knockout.']]
+export default function Landing({user}){
+ return <div className="text-center pt-8 pb-10"><div className="inline-flex gap-[-8px] mb-5">{[['#0A84FF','CP'],['#FF375F','RL'],['#30D158','GU']].map(([c,s],i)=><div key={i} className="w-16 h-16 -ml-3 first:ml-0 rounded-full grid place-items-center text-white font-extrabold ring-4 ring-white shadow-xl" style={{background:`linear-gradient(145deg,${c},${c}99)`}}>{s}</div>)}</div>
+ <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.05]">Run your tournament<br/>from your phone.</h1>
+ <p className="text-slate-600 mt-4 max-w-md mx-auto">Create it, enter scores live, and share one link. Standings and brackets update for everyone instantly.</p>
+ <div className="flex gap-3 justify-center mt-6"><button className="btn-p !px-7 !py-3" onClick={()=>go(user?'/new':'/login')}>{user?'New tournament':'Start free'}</button>{user&&<button className="btn !py-3" onClick={()=>go('/dash')}>My tournaments</button>}</div>
+ <div className="grid sm:grid-cols-3 gap-3 mt-12 text-left">{F.map(([i,t,d])=><div key={t} className="glass p-5"><div className="text-3xl mb-2">{i}</div><b>{t}</b><p className="text-sm text-slate-500 mt-1">{d}</p></div>)}</div>
+ <div className="glass mt-3 p-5 text-left grid sm:grid-cols-3 gap-4 text-sm"><div><b>Private to edit</b><p className="text-slate-500">Each admin has their own account. Only the owner can change a tournament.</p></div><div><b>Public by link</b><p className="text-slate-500">Anyone with the link sees tables, fixtures, brackets and scorers. No login.</p></div><div><b>Live everywhere</b><p className="text-slate-500">Score changes appear on every open screen within a second.</p></div></div></div>}
