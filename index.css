@@ -1,0 +1,9 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;color:#0f172a;-webkit-font-smoothing:antialiased;min-height:100vh;
+background:radial-gradient(60% 40% at 10% 0%,#bfe0ff 0,transparent 70%),radial-gradient(50% 40% at 100% 10%,#ffd9ec 0,transparent 70%),radial-gradient(60% 50% at 50% 100%,#d9f5e5 0,transparent 70%),#f3f7ff;background-attachment:fixed}
+@layer components{
+.glass{@apply bg-white/60 backdrop-blur-xl border border-white/80 rounded-3xl shadow-[0_8px_30px_rgba(30,64,120,.10)]}
+.btn{@apply px-4 py-2 rounded-2xl bg-white/80 border border-white shadow-sm font-semibold text-sm active:scale-95 transition disabled:opacity-50}
+.btn-p{@apply px-5 py-2.5 rounded-2xl text-white font-semibold shadow-lg shadow-blue-500/30 active:scale-95 transition bg-gradient-to-b from-sky-400 to-blue-600 disabled:opacity-50}
+.input{@apply w-full px-4 py-2.5 rounded-2xl bg-white/80 border border-white outline-none focus:ring-2 ring-sky-400 text-sm}
+.chip{@apply px-2.5 py-1 rounded-full text-[11px] font-bold}}
