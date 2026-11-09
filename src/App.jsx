@@ -20,5 +20,5 @@ export default function App(){
  else if(a==='login')v=user?<Dashboard user={user}/>:<Auth/>
  else v=<Landing user={user}/>
  return <div className="max-w-3xl mx-auto px-3 pb-16" style={{paddingTop:'max(env(safe-area-inset-top),12px)'}}>
- <header className="glass !rounded-2xl px-4 py-2.5 flex items-center justify-between mb-4 sticky top-2 z-40"><button onClick={()=>go('/')} className="font-black text-lg">Copa<span className="text-blue-500">Pub</span></button>
+ <header className="glass !rounded-2xl px-4 py-2.5 flex items-center justify-between mb-4 sticky top-2 z-40"><button onClick={()=>go('/')} className="font-black text-lg">C<span className="text-blue-500">Sports</span>
  {configured&&s!==undefined&&(user?<button className="btn" onClick={()=>go('/dash')}>My tournaments</button>:<button className="btn" onClick={()=>go('/login')}>Admin sign in</button>)}</header>{v}</div>}
